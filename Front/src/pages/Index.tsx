@@ -1,5 +1,6 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 export function Index() {
-  return <div>hello my name is scrapEAT</div>;
+  return <p></p>;
 }

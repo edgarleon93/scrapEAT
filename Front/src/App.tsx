@@ -1,7 +1,7 @@
-import "./Style.css";
+import "./style.css";
 import { Routes, Route } from "react-router-dom";
 import { Index } from "./pages/Index";
-import { Menu } from "./components/menu";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
