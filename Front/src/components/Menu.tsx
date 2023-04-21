@@ -1,6 +1,7 @@
 import { Button, Container, Typography } from "@mui/material";
 import React, { useState } from "react";
 import SimpleDialog from "./SimpleDialog";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 interface SimpleDialogProps {
   selectedValue: string;
@@ -23,13 +24,8 @@ export function Menu(): React.ReactElement {
 
   return (
     <Container>
-      <Typography variant="h1" align="center">
-        Menu
-      </Typography>
-
-      <br />
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open simple dialog
+        <Typography variant="body2">Open simple dialog</Typography>
       </Button>
       <SimpleDialog
         selectedValue={selectedValue}
