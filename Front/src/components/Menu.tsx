@@ -1,7 +1,8 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useState } from "react";
-import SimpleDialog from "./SimpleDialog";
+import SimpleDialog from "./Content";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Content from "./Content";
 
 interface SimpleDialogProps {
   selectedValue: string;
@@ -24,10 +25,29 @@ export function Menu(): React.ReactElement {
 
   return (
     <Container>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        <Typography variant="body2">Open simple dialog</Typography>
-      </Button>
-      <SimpleDialog
+      <Box display="flex" justifyContent="flex-end">
+        <Button
+          variant="outlined"
+          sx={{
+            backgroundColor: "primary.main",
+            px: 2,
+            py: 1,
+            m: 2,
+            borderRadius: "4px",
+            ":hover ": {
+              transform: "scale(1.2)",
+              transition: "all 0.3s ease",
+              backgroundColor: "primary.main",
+            },
+          }}
+          onClick={handleClickOpen}
+        >
+          <Typography variant="body2" color="secondary">
+            Menu
+          </Typography>
+        </Button>
+      </Box>
+      <Content
         selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
