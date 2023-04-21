@@ -15,6 +15,7 @@ import {
   ListItemIcon,
 } from "@mui/material";
 import { BookmarkBorder, History, Logout } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 interface SimpleDialogProps {
   selectedValue: string;
@@ -38,43 +39,62 @@ const Content: React.FC<SimpleDialogProps> = (props) => {
   const handleListItemClick = (value: string) => {
     onClose(value);
   };
+  const navigate = useNavigate();
+
+  const handleRedirect = (label: string) => {
+    console.log(label);
+    handleListItemClick(label);
+    if (label === "My recipes") {
+      navigate("/recipe");
+    } else if (label === "My history") {
+      navigate("/history");
+    } else if (label === "Logout") {
+      navigate("/");
+    }
+  };
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <Box sx={{ backgroundColor: "primary.main", px: 4 }}>
-        <DialogTitle color="secondary" align="center" sx={{ my: 1 }}>
-          <Typography variant="body2">Menu</Typography>
-        </DialogTitle>
+      <Box
+        sx={{
+          backgroundColor: "primary.main",
+          p: 2,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <DialogContent>
           <List>
             {options.map((option) => (
               <ListItem
                 sx={{
                   color: "secondary.main",
-                  gap: 1,
+                  textAlign: "center",
+                  mx: 2,
                 }}
                 button
-                onClick={() => handleListItemClick(option.label)}
+                onClick={() => handleRedirect(option.label)}
                 key={option.label}
               >
                 <Box
                   sx={{
+                    flexGrow: 1,
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    width: "100%",
+                    justifyContent: "center",
+                    alignText: "center",
                   }}
                 >
-                  <ListItemText
-                    primary={option.label}
-                    sx={{ textAlign: "center" }}
-                  />
-                  <ListItemIcon
-                    sx={{ px: 2, color: "secondary.main", textAlign: "right" }}
-                  >
-                    {option.icon}
-                  </ListItemIcon>
+                  <ListItemText primary={option.label} />
                 </Box>
+                <ListItemIcon
+                  sx={{
+                    color: "secondary.main",
+                    textAlign: "right",
+                  }}
+                >
+                  {option.icon}
+                </ListItemIcon>
               </ListItem>
             ))}
           </List>

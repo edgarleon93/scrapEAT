@@ -1,10 +1,11 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React, { useState } from "react";
 import SimpleDialog from "./Content";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Content from "./Content";
+import { NavbarButton } from "./buttons.tsx/NavbarButton";
 
-interface SimpleDialogProps {
+interface MenuProps {
   selectedValue: string;
   open: boolean;
   onClose: (value: string) => void;
@@ -26,8 +27,8 @@ export function Menu(): React.ReactElement {
   return (
     <Container>
       <Box display="flex" justifyContent="flex-end">
-        <Button
-          variant="outlined"
+        <NavbarButton
+          variant="menu"
           sx={{
             backgroundColor: "primary.main",
             px: 2,
@@ -45,7 +46,7 @@ export function Menu(): React.ReactElement {
           <Typography variant="body2" color="secondary">
             Menu
           </Typography>
-        </Button>
+        </NavbarButton>
       </Box>
       <Content
         selectedValue={selectedValue}
