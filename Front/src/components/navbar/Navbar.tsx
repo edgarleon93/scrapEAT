@@ -1,8 +1,28 @@
+import React, { useState, useEffect } from "react";
 import { AppBar, Box, Hidden, Toolbar, Typography } from "@mui/material";
-import React from "react";
-import { NavbarButton } from "./buttons.tsx/NavbarButton";
+import { NavbarButton } from "./NavbarButton";
 
-export default function () {
+export default function Navbar() {
+  const [isConnected, setIsConnected] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsConnected(true);
+    } else {
+      setIsConnected(false);
+    }
+  }, []);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value: string) => {
+    setOpen(false);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -28,7 +48,7 @@ export default function () {
             </Typography>
           </Hidden>
           <NavbarButton
-            variant="menu"
+            variant={isConnected ? "menu" : "login"}
             sx={{
               backgroundColor: "primary.main",
               px: 2,
@@ -43,8 +63,11 @@ export default function () {
                 backgroundColor: "primary.main",
               },
             }}
+            open={open}
+            onOpen={handleOpen}
+            onClose={handleClose}
           >
-            <Typography variant="body2">Login</Typography>
+            <Typography variant="body2">{"Login"}</Typography>
           </NavbarButton>
         </Toolbar>
       </AppBar>
