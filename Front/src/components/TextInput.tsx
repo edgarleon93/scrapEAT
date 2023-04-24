@@ -2,14 +2,14 @@ import { useState, useRef } from "react";
 // import { useMutation, gql } from "@apollo/client";
 import { Box, Button, TextField } from "@mui/material";
 
-// const SEND_TEXT_MUTATION = gql`
+// const SEND_TEXT_MUTATION = gql
 //   mutation SendTextMutation($textData: String!) {
 //     sendText(textData: $textData) {
 //       id
 //       message
 //     }
 //   }
-// `;
+// ;
 
 function TextInput() {
   const textFieldRef = useRef<HTMLInputElement>(null);
@@ -29,7 +29,7 @@ function TextInput() {
         inputRef={textFieldRef}
         fullWidth
         id="standard-primary"
-        placeholder="https://www..."
+        placeholder="https://www/..."
         variant="filled"
         size="small"
         color="primary"

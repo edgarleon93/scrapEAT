@@ -1,11 +1,12 @@
+import { LikeButton } from "./components/buttons.tsx/LikeButton";
+import Navbar from "./components/navbar/Navbar";
+import HomePage from "./pages/HomePage";
+import { Index } from "./pages/Index";
+import MyHistory from "./pages/MyHistory";
+import MyRecipe from "./pages/MyRecipe";
 import "./style.css";
 import { Routes, Route } from "react-router-dom";
-import { Index } from "./pages/Index";
 
-import MyRecipe from "./pages/MyRecipe";
-import MyHistory from "./pages/MyHistory";
-import HomePage from "./pages/HomePage";
-import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/history" element={<MyHistory />} />
       <Route path="/navbar" element={<Navbar />} />
       <Route path="/HomePage" element={<HomePage />} />
+      <Route path="/Like" element={<LikeButton />} />
     </Routes>
   );
 }

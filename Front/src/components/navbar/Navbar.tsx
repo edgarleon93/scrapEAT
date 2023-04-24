@@ -68,7 +68,9 @@ export default function Navbar() {
             onOpen={handleOpen}
             onClose={handleClose}
           >
-            <Typography variant="body2">{"Login"}</Typography>
+            <Typography variant="body2">
+              {isConnected ? "menu" : "login"}
+            </Typography>
           </NavbarButton>
         </Toolbar>
       </AppBar>
