@@ -22,6 +22,7 @@ export default function () {
               variant="h2"
               sx={{
                 flexGrow: 1,
+                pl: 2,
               }}
             >
               scrapEAT
@@ -38,7 +39,7 @@ export default function () {
               right: "0",
               marginRight: "20px",
               ":hover ": {
-                transform: "scale(1.2)",
+                transform: "scale(1.1)",
                 transition: "all 0.3s ease",
                 backgroundColor: "primary.main",
               },

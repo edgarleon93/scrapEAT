@@ -3,13 +3,16 @@ import Navbar from "../components/Navbar";
 import TextHomePage from "../components/TextHomePage";
 import TextInput from "../components/TextInput";
 import { useState } from "react";
+import { Container } from "@mui/material";
 
 function HomePage() {
   return (
     <>
       <Navbar />
-      <TextHomePage />
-      <TextInput />
+      <Container>
+        <TextHomePage />
+        <TextInput />
+      </Container>
     </>
   );
 }
