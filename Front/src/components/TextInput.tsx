@@ -1,27 +1,33 @@
-import { useState } from "react";
-// import { useMutation, gql } from "@apollo/client";
+import { useState, useRef } from "react";
+import { useMutation, gql } from "@apollo/client";
 import { Box, Button, TextField } from "@mui/material";
 
-// const SEND_TEXT_MUTATION = gql`
-//   mutation SendTextMutation($textData: String!) {
-//     sendText(textData: $textData) {
-//       id
-//       message
-//     }
-//   }
-// `;
+const SEND_TEXT_MUTATION = gql`
+  mutation SendTextMutation($textData: String!) {
+    sendText(textData: $textData) {
+      id
+      message
+    }
+  }
+`;
 
 function TextInput() {
-  const [textFieldValue, setTextFieldValue] = useState("");
+  const textFieldRef = useRef<HTMLInputElement>(null);
 
-  // const [sendText] = useMutation(SEND_TEXT_MUTATION, {
-  //   onError: (error) => console.error(error),
-  //   onCompleted: (data) => console.log(data),
-  // });
+  const [sendText] = useMutation(SEND_TEXT_MUTATION, {
+    onError: (error) => console.error(error),
+    onCompleted: (data) => console.log(data),
+  });
+
+  const handleClick = () => {
+    const textData = textFieldRef.current!.value;
+    sendText({ variables: { textData } });
+  };
 
   return (
     <Box sx={{ align: "center", display: "flex", mt: 10, px: 5 }}>
       <TextField
+        inputRef={textFieldRef}
         fullWidth
         id="standard-primary"
         placeholder="https://www..."
@@ -31,6 +37,7 @@ function TextInput() {
       />
       <Button
         type="submit"
+        onClick={handleClick}
         variant="contained"
         color="primary"
         sx={{
