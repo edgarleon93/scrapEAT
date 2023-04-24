@@ -1,5 +1,15 @@
-import React from "react";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import { Checkbox } from "@mui/material";
 
-export default function likeButton() {
-  return <div>likeButton</div>;
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
+export function LikeButton() {
+  return (
+    <>
+      <Checkbox
+        {...label}
+        icon={<FavoriteBorder />}
+        checkedIcon={<Favorite />}
+      />
+    </>
+  );
 }

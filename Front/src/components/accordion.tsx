@@ -4,13 +4,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Navbar from "./navbar/Navbar";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 export default function SimpleAccordion() {
   return (
     <div>
-      <Box sx={{ margin: 3 }}>
+      <Container>
         <Accordion
           sx={{
             backgroundColor: "transparent",
@@ -41,7 +41,7 @@ export default function SimpleAccordion() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-      </Box>
+      </Container>
     </div>
   );
 }
