@@ -5,6 +5,7 @@ import { Menu } from "./components/Menu";
 import MyRecipe from "./pages/MyRecipe";
 import MyHistory from "./pages/MyHistory";
 import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/recipe" element={<MyRecipe />} />
       <Route path="/history" element={<MyHistory />} />
       <Route path="/navbar" element={<Navbar />} />
+      <Route path="/HomePage" element={<HomePage />} />
     </Routes>
   );
 }

@@ -1,55 +1,39 @@
 import { useState } from "react";
-import { Box, Button, TextField } from "@mui/material";
 import { useMutation, gql } from "@apollo/client";
+import { Box, Button, TextField } from "@mui/material";
 
-const CREATE_ITEM_MUTATION = gql`
-  mutation CreateItem($text: String!) {
-    createItem(text: $text) {
+const SEND_TEXT_MUTATION = gql`
+  mutation SendTextMutation($textData: String!) {
+    sendText(textData: $textData) {
       id
-      text
+      message
     }
   }
 `;
 
-const MyForm = () => {
-  const [text, setText] = useState("");
+function TextInput() {
+  const [textFieldValue, setTextFieldValue] = useState("");
 
-  const [createItem, { loading, error }] = useMutation(CREATE_ITEM_MUTATION);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    createItem({
-      variables: {
-        text: text,
-      },
-    }).then(() => {
-      setText("");
-      console.log("Item created successfully");
-    });
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-  };
+  const [sendText] = useMutation(SEND_TEXT_MUTATION, {
+    onError: (error) => console.error(error),
+    onCompleted: (data) => console.log(data),
+  });
 
   return (
-    <Box align="center" sx={{ mt: 10, px: 5 }}>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          fullWidth
-          id="standard-primary"
-          label="Past here"
-          variant="outlined"
-          size="small"
-          color="primary"
-          value={text}
-          onChange={handleChange}
-        />
-        <Button type="submit" variant="contained" color="primary">
-          Submit
-        </Button>
-      </form>
+    <Box align="center" sx={{ display: "flex", mt: 10, px: 5 }}>
+      <TextField
+        fullWidth
+        id="standard-primary"
+        label="https://www..."
+        variant="outlined"
+        size="small"
+        color="primary"
+      />
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
     </Box>
   );
-};
+}
+
+export default TextInput;
