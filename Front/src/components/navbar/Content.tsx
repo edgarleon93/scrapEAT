@@ -14,23 +14,36 @@ import {
   Typography,
   ListItemIcon,
 } from "@mui/material";
-import { BookmarkBorder, History, Logout } from "@mui/icons-material";
+import {
+  Apple,
+  BookmarkBorder,
+  Facebook,
+  Google,
+  History,
+  Logout,
+} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 interface SimpleDialogProps {
   selectedValue: string;
   open: boolean;
   onClose: (value: string) => void;
+  isConnected: boolean;
 }
 
-const options = [
+const menuOptions = [
   { label: "My recipes", icon: <BookmarkBorder /> },
   { label: "My history", icon: <History /> },
   { label: "Logout", icon: <Logout /> },
 ];
+const loginOptions = [
+  { label: "Connect with ", icon: <Facebook /> },
+  { label: "Connect with ", icon: <Google /> },
+  { label: "Connect with", icon: <Apple /> },
+];
 
 const Content: React.FC<SimpleDialogProps> = (props) => {
-  const { onClose, selectedValue, open } = props;
+  const { onClose, selectedValue, open, isConnected } = props;
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -66,7 +79,7 @@ const Content: React.FC<SimpleDialogProps> = (props) => {
       >
         <DialogContent>
           <List>
-            {options.map((option) => (
+            {(isConnected ? menuOptions : loginOptions).map((option) => (
               <ListItem
                 sx={{
                   color: "secondary.main",
