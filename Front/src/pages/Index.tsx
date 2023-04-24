@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, TextField, Typography, Button } from "@mui/material";
+import { Box, TextField, Typography, Button } from "@mui/material";
 
 export function Index() {
   return (
@@ -10,7 +10,7 @@ export function Index() {
       <Typography variant="h1" align="center" sx={{ px: 5 }}>
         we take care of the rest
       </Typography>
-      <Box align="center" sx={{ display: "flex", mt: 10, px: 5 }}>
+      <Box sx={{ display: "flex", mt: 10, px: 5 }}>
         <TextField
           fullWidth
           id="standard-primary"

@@ -4,9 +4,9 @@ import HomePage from "./pages/HomePage";
 import { Index } from "./pages/Index";
 import MyHistory from "./pages/MyHistory";
 import MyRecipe from "./pages/MyRecipe";
-
 import "./style.css";
 import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (

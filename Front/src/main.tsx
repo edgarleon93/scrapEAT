@@ -9,70 +9,71 @@ const theme = createTheme({
   typography: {
     h1: {
       fontFamily: "Jost, sans-serif",
-      fontSize: "2.5rem",
+      fontSize: "2rem",
       "@media (min-width: 640px)": {
-        fontSize: "3.5rem",
+        fontSize: "2.5rem",
       },
       "@media (min-width: 768px)": {
-        fontSize: "4.9rem",
+        fontSize: "3rem",
       },
       "@media (min-width: 1200px)": {
-        fontSize: "5.5rem",
+        fontSize: "3.5rem",
       },
     },
     h2: {
       fontFamily: "Jost, sans-serif",
-      fontSize: "2.1rem",
+      fontSize: "1.5rem",
       "@media (min-width: 640px)": {
-        fontSize: "2.9rem",
+        fontSize: "2rem",
       },
       "@media (min-width: 768px)": {
-        fontSize: "4rem",
+        fontSize: "2.5rem",
       },
       "@media (min-width: 1200px)": {
-        fontSize: "5rem",
+        fontSize: "3rem",
       },
     },
     h3: {
       fontFamily: "Jost, sans-serif",
-      fontSize: "1.7rem",
+      fontSize: "1.3rem",
       "@media (min-width: 640px)": {
-        fontSize: "2.4rem",
+        fontSize: "1.8rem",
       },
       "@media (min-width: 768px)": {
-        fontSize: "2.9rem",
+        fontSize: "2.4rem",
       },
       "@media (min-width: 1200px)": {
-        fontSize: "4rem",
+        fontSize: "2.9rem",
       },
     },
     body1: {
       fontFamily: "Jost, sans-serif",
-      fontSize: "1.4rem",
-      "@media (min-width: 640px)": {
-        fontSize: "1.7rem",
-      },
-      "@media (min-width: 768px)": {
-        fontSize: "2.4rem",
-      },
-      "@media (min-width: 1200px)": {
-        fontSize: "2.9rem",
-      },
-    },
-    body2: {
-      fontFamily: "Jost, sans-serif",
-      fontSize: "1.2rem",
+      fontSize: "1.1rem",
       "@media (min-width: 640px)": {
         fontSize: "1.4rem",
       },
       "@media (min-width: 768px)": {
-        fontSize: "1.7rem",
+        fontSize: "1.8rem",
       },
       "@media (min-width: 1200px)": {
         fontSize: "2.4rem",
       },
     },
+    body2: {
+      fontFamily: "Jost, sans-serif",
+      fontSize: "1rem",
+      "@media (min-width: 640px)": {
+        fontSize: "1.2rem",
+      },
+      "@media (min-width: 768px)": {
+        fontSize: "1.4rem",
+      },
+      "@media (min-width: 1200px)": {
+        fontSize: "1.8rem",
+      },
+    },
   },
+
   palette: {
     primary: { main: "#e7e7e7" },
     secondary: { main: "#be7736" },
