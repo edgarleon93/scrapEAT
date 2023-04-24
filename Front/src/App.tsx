@@ -4,8 +4,8 @@ import { Index } from "./pages/Index";
 
 import MyRecipe from "./pages/MyRecipe";
 import MyHistory from "./pages/MyHistory";
-import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
