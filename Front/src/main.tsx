@@ -4,6 +4,8 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline, createTheme } from "@mui/material";
+import { ApolloProvider } from "@apollo/client";
+import client from "./hooks/apolloClient";
 
 const theme = createTheme({
   typography: {
@@ -83,10 +85,12 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
+      <ApolloProvider client={client}>
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

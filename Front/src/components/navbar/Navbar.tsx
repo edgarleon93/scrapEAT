@@ -58,6 +58,7 @@ export default function Navbar() {
               position: "absolute",
               right: "0",
               marginRight: "20px",
+              filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.3))",
               ":hover ": {
                 transform: "scale(1.1)",
                 transition: "all 0.3s ease",

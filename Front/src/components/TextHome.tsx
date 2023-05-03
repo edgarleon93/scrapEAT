@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
 
-function TextHomePage() {
+function TextHome() {
   return (
     <>
       <Typography variant="h1" sx={{ px: 5, pt: 20 }}>
@@ -13,4 +13,4 @@ function TextHomePage() {
     </>
   );
 }
-export default TextHomePage;
+export default TextHome;
