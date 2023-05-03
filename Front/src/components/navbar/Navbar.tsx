@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { AppBar, Box, Hidden, Toolbar, Typography } from "@mui/material";
 import { NavbarButton } from "./NavbarButton";
+import Content from "./Content";
 
 export default function Navbar() {
   const [isConnected, setIsConnected] = useState(false);
   const [open, setOpen] = useState(false);
+  const defaultSelectedValue = ""; // Utilisez une valeur par défaut appropriée
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -75,6 +77,12 @@ export default function Navbar() {
           </NavbarButton>
         </Toolbar>
       </AppBar>
+      {/* <Content
+        open={open}
+        onClose={handleClose}
+        isConnected={isConnected}
+        selectedValue={defaultSelectedValue}
+      /> */}
     </Box>
   );
 }

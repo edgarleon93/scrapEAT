@@ -8,7 +8,7 @@ import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
 
 const httpLink = createHttpLink({
-  uri: "https://recipe-scrapping-app-backend-us9cy.ondigitalocean.app/",
+  uri: "https://recipe-scrapping-app-backend-us9cy.ondigitalocean.app/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {

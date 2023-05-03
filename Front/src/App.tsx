@@ -1,9 +1,10 @@
 import { LikeButton } from "./components/buttons.tsx/likeButton";
+import GoogleAuth from "./components/google";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import MyHistory from "./pages/MyHistory";
 import MyRecipe from "./pages/MyRecipe";
-import "./style.css";
+import "./Style.css";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path="/navbar" element={<Navbar />} />
       <Route path="/" element={<Home />} />
       <Route path="/Like" element={<LikeButton />} />
+      <Route path="/google" element={<GoogleAuth />} />
     </Routes>
   );
 }
