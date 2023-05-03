@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent, FormEvent, useEffect } from "react";
+import { useState, useRef, FormEvent, useEffect } from "react";
 import {
   Box,
   Button,
@@ -8,33 +8,32 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
-import { gql, useLazyQuery } from "@apollo/client";
+import { gql, useMutation } from "@apollo/client";
+
+const SCRAPE_RECIPE = gql`
+  mutation ScrapeRecipe($url: String!) {
+    scrapeRecipe(url: $url) {
+      title
+      ingredients
+      ustensiles
+      steps
+    }
+  }
+`;
 
 function TextInput() {
   const textFieldRef = useRef<HTMLInputElement>(null);
 
-  const SCRAPE_MARMITON_RECIPE = gql`
-    query ScrapeMarmitonRecipe($url: String!) {
-      scrapeMarmitonRecipe(url: $url) {
-        title
-        ingredients
-        steps
-        ustensiles
-      }
-    }
-  `;
-  const [scrapeMarmitonRecipe, { data, error }] = useLazyQuery(
-    SCRAPE_MARMITON_RECIPE
-  );
   const [url, setUrl] = useState("");
+  const [scrapeRecipe, { data, loading, error }] = useMutation(SCRAPE_RECIPE);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const inputUrl = textFieldRef.current?.value || "";
-    console.log("handleSubmit called, input URL:", inputUrl);
-    setUrl(inputUrl);
-    scrapeMarmitonRecipe({ variables: { url: inputUrl } });
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await scrapeRecipe({
+      variables: { url: textFieldRef.current?.value || "" },
+    });
   };
+
   useEffect(() => {
     if (data) {
       console.log("Data received:", data);
@@ -80,14 +79,23 @@ function TextInput() {
           </Button>
         </Box>
       </form>
-      {data && data.scrapeMarmitonRecipe && (
+      {loading && <p className="text-center">Loading...</p>}
+      {error && (
         <Box sx={{ mt: 5 }}>
-          <Typography variant="h6">
-            Titre: {data.scrapeMarmitonRecipe.title}
+          <Typography variant="h6" color="error" sx={{ color: "primary.main" }}>
+            Une erreur s'est produite lors de la récupération des données.
           </Typography>
+          <Typography variant="body1" color="error">
+            {error.message}
+          </Typography>
+        </Box>
+      )}
+      {data && (
+        <Box sx={{ mt: 5 }}>
+          <Typography variant="h6">Titre: {data.scrapeRecipe.title}</Typography>
           <Typography variant="h6">Ingrédients:</Typography>
           <List>
-            {data.scrapeMarmitonRecipe.ingredients.map(
+            {data.scrapeRecipe.ingredients.map(
               (ingredient: string, index: number) => (
                 <ListItem key={index}>
                   <ListItemText primary={ingredient} />
@@ -97,17 +105,15 @@ function TextInput() {
           </List>
           <Typography variant="h6">Étapes:</Typography>
           <List>
-            {data.scrapeMarmitonRecipe.steps.map(
-              (step: string, index: number) => (
-                <ListItem key={index}>
-                  <ListItemText primary={step} />
-                </ListItem>
-              )
-            )}
+            {data.scrapeRecipe.steps.map((step: string, index: number) => (
+              <ListItem key={index}>
+                <ListItemText primary={step} />
+              </ListItem>
+            ))}
           </List>
           <Typography variant="h6">Ustensiles:</Typography>
           <List>
-            {data.scrapeMarmitonRecipe.ustensiles.map(
+            {data.scrapeRecipe.ustensiles.map(
               (ustensile: string, index: number) => (
                 <ListItem key={index}>
                   <ListItemText primary={ustensile} />
@@ -115,16 +121,6 @@ function TextInput() {
               )
             )}
           </List>
-        </Box>
-      )}
-      {error && (
-        <Box sx={{ mt: 5 }}>
-          <Typography variant="h6" color="error" sx={{ color: "primary.main" }}>
-            Une erreur s'est produite lors de la récupération des données.
-          </Typography>
-          <Typography variant="body1" color="error">
-            {error.message}
-          </Typography>
         </Box>
       )}
     </>
