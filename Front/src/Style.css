@@ -1,15 +1,23 @@
 body {
-  background: linear-gradient(
-    149deg,
-    rgba(188, 88, 56, 1) 0%,
-    rgba(189, 103, 55, 1) 9%,
-    rgba(190, 119, 54, 1) 18%,
-    rgba(193, 128, 44, 1) 50%,
-    rgba(197, 137, 34, 1) 81%,
-    rgba(194, 148, 41, 1) 90%,
-    rgba(191, 160, 48, 1) 100%
+  background-image: linear-gradient(
+    to right top,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c,
+    #ff9f1c
   );
   height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 h1,
@@ -20,5 +28,18 @@ p {
 }
 
 p {
-  color: #be7736;
+  color: #ff9f1c;
+}
+
+.blob {
+  background-image: url("../public/blob\ 1.svg");
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px; /* half of the SVG height */
+  margin-left: -25px; /* half of the SVG width */
 }

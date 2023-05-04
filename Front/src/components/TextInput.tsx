@@ -49,7 +49,7 @@ function TextInput() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Box sx={{ align: "center", display: "flex", mt: 10, px: 5 }}>
+        <Box sx={{ align: "center", display: "flex", mt: 10, px: 5, mb: 10 }}>
           <TextField
             inputRef={textFieldRef}
             fullWidth
@@ -92,7 +92,9 @@ function TextInput() {
       )}
       {data && (
         <Box sx={{ mt: 5 }}>
-          <Typography variant="h6">Titre: {data.scrapeRecipe.title}</Typography>
+          <Typography variant="h3">
+            We scrapped your {data.scrapeRecipe.title} recipes
+          </Typography>
           <Typography variant="h6">Ingrédients:</Typography>
           <List>
             {data.scrapeRecipe.ingredients.map(
