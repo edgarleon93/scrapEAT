@@ -48,6 +48,19 @@ const theme = createTheme({
         fontSize: "2.9rem",
       },
     },
+    h4: {
+      fontFamily: "Jost, sans-serif",
+      fontSize: "1.2rem",
+      "@media (min-width: 640px)": {
+        fontSize: "1.5rem",
+      },
+      "@media (min-width: 768px)": {
+        fontSize: "2rem",
+      },
+      "@media (min-width: 1200px)": {
+        fontSize: "2.5rem",
+      },
+    },
     body1: {
       fontFamily: "Jost, sans-serif",
       fontSize: "1.1rem",

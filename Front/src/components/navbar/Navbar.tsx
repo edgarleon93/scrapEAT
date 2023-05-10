@@ -28,10 +28,11 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
+        position="fixed"
         id="nav"
         sx={{
           backgroundColor: "transparent",
+          backdropFilter: "blur(8px)",
           boxShadow: "none",
           height: "90px",
           py: "10px",

@@ -1,23 +1,26 @@
 body {
-  background-image: linear-gradient(
-    to right top,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c,
-    #ff9f1c
-  );
+  background-image: linear-gradient(to bottom left, #e7e7e7 50%, #ff9f1c 50%);
   height: 100vh;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center 90%;
   background-repeat: no-repeat;
+  background-size: 100% 900%;
+}
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background-image: url(../public/TopRight.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  overflow: hidden;
 }
 
 h1,
@@ -29,17 +32,4 @@ p {
 
 p {
   color: #ff9f1c;
-}
-
-.blob {
-  background-image: url("../public/blob\ 1.svg");
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -25px; /* half of the SVG height */
-  margin-left: -25px; /* half of the SVG width */
 }
