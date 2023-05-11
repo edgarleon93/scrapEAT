@@ -1,4 +1,3 @@
-import { LikeButton } from "./components/buttons.tsx/likeButton";
 import GoogleAuth from "./components/google";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
@@ -14,7 +13,6 @@ function App() {
       <Route path="/history" element={<MyHistory />} />
       <Route path="/navbar" element={<Navbar />} />
       <Route path="/" element={<Home />} />
-      <Route path="/Like" element={<LikeButton />} />
       <Route path="/google" element={<GoogleAuth />} />
     </Routes>
   );
