@@ -8,8 +8,10 @@ import {
   ListItem,
   ListItemText,
   LinearProgress,
+  IconButton,
 } from "@mui/material";
 import { gql, useMutation } from "@apollo/client";
+import { Bookmark, Favorite } from "@mui/icons-material";
 
 const SCRAPE_RECIPE = gql`
   mutation ScrapeRecipe($url: String!) {
@@ -118,6 +120,20 @@ function TextInput() {
               variant="h2"
             >
               {data.scrapeRecipe.title} recipes
+              <IconButton
+                color="primary"
+                sx={{
+                  mx: 3,
+                  mt: 1,
+                  ":hover ": {
+                    transform: "scale(1.1)",
+                    transition: "all 0.3s ease",
+                  },
+                }}
+              >
+                <Bookmark />
+                <span>Save</span>
+              </IconButton>
             </Typography>
           </Box>
           <Typography
