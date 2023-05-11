@@ -1,15 +1,10 @@
 body {
-  background: linear-gradient(
-    149deg,
-    rgba(188, 88, 56, 1) 0%,
-    rgba(189, 103, 55, 1) 9%,
-    rgba(190, 119, 54, 1) 18%,
-    rgba(193, 128, 44, 1) 50%,
-    rgba(197, 137, 34, 1) 81%,
-    rgba(194, 148, 41, 1) 90%,
-    rgba(191, 160, 48, 1) 100%
-  );
+  background-image: linear-gradient(to bottom left, #e7e7e7 50%, #ff9f1c 50%);
   height: 100vh;
+  background-attachment: fixed;
+  background-position: center 85%;
+  background-repeat: no-repeat;
+  background-size: 100% 1000%;
 }
 
 h1,
@@ -19,6 +14,6 @@ p {
   color: #e7e7e7;
 }
 
-p {
-  color: #be7736;
+h3 p {
+  color: #ff9f1c;
 }
