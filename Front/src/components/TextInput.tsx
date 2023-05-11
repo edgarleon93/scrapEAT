@@ -7,6 +7,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  LinearProgress,
 } from "@mui/material";
 import { gql, useMutation } from "@apollo/client";
 
@@ -64,10 +65,11 @@ function TextInput() {
               type="submit"
               variant="contained"
               color="primary"
+              disableElevation
               sx={{
                 backgroundColor: "primary.main",
                 borderRadius: "4px",
-                filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.3))",
+                border: `2px solid orange`,
 
                 ":hover ": {
                   transform: "scale(1.1)",
@@ -88,7 +90,7 @@ function TextInput() {
           </Box>
         </form>
       </Box>
-      {loading && <p className="text-center">Loading...</p>}
+      {loading && <LinearProgress />}
       {error && (
         <Box sx={{ mt: 5 }}>
           <Typography variant="h6" color="error" sx={{ color: "primary.main" }}>

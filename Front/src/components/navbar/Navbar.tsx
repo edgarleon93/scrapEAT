@@ -54,18 +54,19 @@ export default function Navbar() {
           <NavbarButton
             variant={isConnected ? "menu" : "login"}
             sx={{
-              backgroundColor: "primary.main",
+              backgroundColor: "secondary.main",
               px: 2,
               py: 1,
               borderRadius: "4px",
               position: "absolute",
               right: "0",
               marginRight: "20px",
-              filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.3))",
+              border: `2px solid white`,
+
               ":hover ": {
                 transform: "scale(1.1)",
                 transition: "all 0.3s ease",
-                backgroundColor: "primary.main",
+                backgroundColor: "secondary.main",
               },
             }}
             open={open}

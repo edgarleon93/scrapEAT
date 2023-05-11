@@ -2,21 +2,18 @@ body {
   background-image: linear-gradient(to bottom left, #e7e7e7 50%, #ff9f1c 50%);
   height: 100vh;
   background-attachment: fixed;
-  background-position: center 95%;
+  background-position: center 85%;
   background-repeat: no-repeat;
   background-size: 100% 1000%;
 }
 
 h1,
 h2,
+h3,
 p {
   color: #e7e7e7;
 }
 
-h3 {
-  color: #f0f0f0;
-}
-
-p {
+h3 p {
   color: #ff9f1c;
 }
