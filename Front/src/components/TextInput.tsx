@@ -135,7 +135,7 @@ function TextInput() {
                   }}
                   key={index}
                 >
-                  <ListItemText primary={ingredient} />
+                  <ListItemText secondary={ingredient} />
                 </ListItem>
               )
             )}
@@ -153,7 +153,7 @@ function TextInput() {
                   sx={{ align: "center", display: "flex", px: 8 }}
                   key={index}
                 >
-                  <ListItemText primary={ustensile} />
+                  <ListItemText secondary={ustensile} />
                 </ListItem>
               )
             )}
@@ -170,7 +170,7 @@ function TextInput() {
                 sx={{ align: "center", display: "flex", px: 8, mb: 3 }}
                 key={index}
               >
-                <ListItemText primary={step} />
+                <ListItemText secondary={step} />
               </ListItem>
             ))}
           </List>

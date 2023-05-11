@@ -2,32 +2,19 @@ body {
   background-image: linear-gradient(to bottom left, #e7e7e7 50%, #ff9f1c 50%);
   height: 100vh;
   background-attachment: fixed;
-  background-position: center 90%;
+  background-position: center 95%;
   background-repeat: no-repeat;
-  background-size: 100% 900%;
-}
-body::after {
-  content: "";
-  display: block;
-  position: fixed;
-  z-index: -1;
-  bottom: 0;
-  left: auto;
-  right: 0;
-  width: 50%;
-  height: 100vh;
-  background-image: url(../public/TopRight.svg);
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
-  overflow: hidden;
+  background-size: 100% 1000%;
 }
 
 h1,
 h2,
-h3,
 p {
   color: #e7e7e7;
+}
+
+h3 {
+  color: #f0f0f0;
 }
 
 p {
