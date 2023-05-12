@@ -6,6 +6,7 @@
 ![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 
 **scrapEAT** is a web application that extracts only the ingredients and steps from a recipe URL, while removing ads and other irrelevant content. This project is currently under development, using React.js, TypeScript, MUI (Material-UI), and GraphQL. The UI design was created in Figma.
+**Live app here** https://scrap-eat-one.vercel.app/
 
 ## UI Mockups
 
@@ -13,7 +14,6 @@
 
 ![iPhone 14 - 6](https://user-images.githubusercontent.com/114822626/234019765-22f88f6c-19d1-4b53-a4a3-712743bdd188.png)
 ![iPhone 14 - 7](https://user-images.githubusercontent.com/114822626/234019779-2ad3d3c3-bcaf-4227-b1b5-9cf1ed52986a.png)
-
 
 ## Getting Started
 
@@ -26,6 +26,3 @@ The backend repository for Season can be found [here](https://github.com/LoicFra
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-
-
