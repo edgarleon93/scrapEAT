@@ -12,6 +12,11 @@ h2,
 h3,
 p {
   color: #e7e7e7;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff9f1c;
+
+  
+
 }
 
 h3 p {
